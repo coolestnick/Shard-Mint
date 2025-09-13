@@ -21,8 +21,6 @@
   "author": "ShardMint",
   "license": "MIT",
   "dependencies": {
-    "@next/swc-darwin-arm64": "^15.5.3",
-    "@next/swc-darwin-x64": "^15.5.3",
     "@tabler/icons-react": "^3.34.1",
     "autoprefixer": "^10.4.16",
     "clsx": "^2.1.1",

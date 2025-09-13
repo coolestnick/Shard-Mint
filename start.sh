@@ -13,4 +13,4 @@ fi
 export NEXT_SHARP_PATH=node_modules/sharp
 
 # Run the Next.js development server
-npm run dev
+npx next dev

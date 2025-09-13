@@ -12,7 +12,14 @@
       "Bash(lsof:*)",
       "Bash(npm install:*)",
       "Bash(chmod:*)",
-      "Bash(./start.sh:*)"
+      "Bash(./start.sh:*)",
+      "Bash(vercel:*)",
+      "Bash(npx tsx:*)",
+      "Bash(cat:*)",
+      "Bash(source:*)",
+      "Bash(./node_modules/.bin/next dev)",
+      "Bash(ls:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
