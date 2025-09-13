@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(node:*)",
+      "Bash(NODE_NO_WARNINGS=1 npx next dev)",
+      "Bash(pkill:*)",
+      "Bash(nvm use:*)",
+      "Bash(bash:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(npm install:*)",
+      "Bash(chmod:*)",
+      "Bash(./start.sh:*)"
+    ],
+    "deny": []
+  }
+}
