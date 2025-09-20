@@ -19,7 +19,8 @@
       "Bash(source:*)",
       "Bash(./node_modules/.bin/next dev)",
       "Bash(ls:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "WebFetch(domain:shard-mint.vercel.app)"
     ],
     "deny": []
   }

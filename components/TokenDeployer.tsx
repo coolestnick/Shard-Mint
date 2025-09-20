@@ -194,10 +194,23 @@ export default function TokenDeployer({ isConnected, account }: TokenDeployerPro
           
           // Also save to lastDeploymentResult for immediate display
           localStorage.setItem('lastDeploymentResult', JSON.stringify(result))
-          
+
+          // Complete tracking - MOVED HERE to ensure it always runs
+          await completeInteraction({
+            walletAddress: account,
+            sessionId,
+            hasMinted: true,
+            contractAddress,
+            transactionHash: deploymentTx.hash,
+            tokenName: tokenData.name,
+            tokenSymbol: tokenData.symbol,
+            totalSupply: tokenData.initialSupply,
+            metadata: { action: 'deploy_complete' }
+          })
+
           // Clear timeout since deployment succeeded
           clearTimeout(deploymentTimeout)
-          
+
           return // Exit early since we already showed the result
         }
       }, 1000) // Check every 1 second instead of 2
@@ -239,8 +252,8 @@ export default function TokenDeployer({ isConnected, account }: TokenDeployerPro
         const deployedTokens = JSON.parse(localStorage.getItem('deployedTokens') || '[]')
         deployedTokens.push(result)
         localStorage.setItem('deployedTokens', JSON.stringify(deployedTokens))
-        
-        // Complete tracking
+
+        // Complete tracking - Fallback path (in case monitoring didn't detect success)
         await completeInteraction({
           walletAddress: account,
           sessionId,
